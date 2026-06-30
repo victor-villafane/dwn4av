@@ -26,7 +26,7 @@ const Home = () => {
               <tr key={personaje._id} >
                 <td>{
                   personaje?.portada
-                    ? <img width="100px" src={`http://localhost:2026/portadas/${personaje.portada}`} alt="" />
+                    ? <img width="100px" src={`${import.meta.env.VITE_API_URL}/portadas/${personaje.portada}`} alt="" />
                     : "Sin portada"
                 }</td>
                 <td>{personaje.superhero}</td>

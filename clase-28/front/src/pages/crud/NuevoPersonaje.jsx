@@ -30,7 +30,7 @@ const NuevoPersonaje = () => {
             data.append("file", formData.portada[0])
         }
         console.log(data)
-        fetch("http://localhost:2026/api/personajes", {
+        fetch(import.meta.env.VITE_API_URL+"/api/personajes", {
             method: "POST",
             headers:{
                 authorization: `Bearer ${token}`,

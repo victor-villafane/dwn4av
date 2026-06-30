@@ -7,7 +7,7 @@ export function useApi() {
     const navigate = useNavigate()
 
     const call = (uri, method, body) => {
-        return fetch("http://localhost:2026/api" + uri, {
+        return fetch(import.meta.env.VITE_API_URL+"/api" + uri, {
             method: method,
             headers: {
                 "Content-Type": "application/json",

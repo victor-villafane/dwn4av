@@ -30,7 +30,7 @@ const ModificarPersonaje = () => {
             data.append("file", formData.portada[0])
         }
         console.log(token)
-        fetch("http://localhost:2026/api/personajes/" + idPersonaje, {
+        fetch( import.meta.env.VITE_API_URL + "/api/personajes/" + idPersonaje, {
             method: "PUT",
             body: data,
             headers: {
@@ -70,7 +70,7 @@ const ModificarPersonaje = () => {
                         <label className="form-label" >Portada  Anterior:</label>
                         {
                             personaje?.portada
-                                ? <img width="100px" src={`http://localhost:2026/portadas/${personaje.portada}`} alt="" />
+                                ? <img width="100px" src={`${import.meta.env.VITE_API_URL}/portadas/${personaje.portada}`} alt="" />
                                 : "Sin portada"
                         }
                         <input className="form-control" accept="image/*" type="file" name="portada" {...register("portada")} />
